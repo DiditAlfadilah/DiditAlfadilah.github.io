@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AINVORIA</title>
+
+  <!-- FEATHER ICON -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      background:#f4f4f4;
+      padding-top:80px;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    nav{
+      background:rgba(0,0,0,0.75);
+      backdrop-filter:blur(10px);
+
+      padding:0px 40px;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      position:fixed;
+      top:0;
+      left:0;
+
+      width:100%;
+
+      z-index:1000;
+
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+
+    
+
+    /* ================= MENU KIRI ================= */
+
+    .nav-left{
+      display:flex;
+      align-items:center;
+      gap:25px;
+    }
+
+    .nav-left a{
+      color:white;
+      text-decoration:none;
+      font-size:15px;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    .nav-left a:hover{
+      color:orange;
+    }
+
+    /* ================= MENU KANAN ================= */
+
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+
+    
+
+    /* ================= PROFILE ================= */
+
+    .profile{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-right:5px;
+    }
+
+    .profile img{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      object-fit:cover;
+      border:2px solid white;
+    }
+
+    .profile span{
+      color:white;
+      font-size:14px;
+      font-weight:500;
+    }
+
+    /* ================= SEARCH BOX ================= */
+
+    .search-box{
+      padding:20px 40px;
+    }
+
+    .search-box input{
+      width:100%;
+      padding:10px;
+      border:none;
+      border-color: black;
+      border-radius:20px;
+      font-size:16px;
+      outline:none;
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    /* ================= ICON BUTTON ================= */
+
+    .icon-btn{
+      background:none;
+      border:none;
+      color:white;
+      cursor:pointer;
+      position:relative;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .icon-btn i{
+      width:22px;
+      height:22px;
+    }
+
+    .icon-btn:hover{
+      color:orange;
+    }
+
+    /* ================= CART BADGE ================= */
+
+    .cart-icon span{
+      position:absolute;
+      top:-8px;
+      right:-10px;
+
+      background:red;
+      color:white;
+
+      font-size:10px;
+      font-weight:bold;
+
+      width:18px;
+      height:18px;
+
+      border-radius:50%;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+      height:800px;
+
+      background:url('ainvoria.jpg');
+
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      color:white;
+      text-align:center;
+    }
+
+    .hero-text{
+      background:rgba(0,0,0,0.5);
+      padding:40px;
+      border-radius:15px;
+      backdrop-filter:blur(4px);
+    }
+
+    .hero-text h2{
+      font-size:50px;
+      margin-bottom:15px;
+    }
+
+    .hero-text p{
+      font-size:18px;
+    }
+
+    /* ================= PRODUK ================= */
+
+    .section-title{
+      text-align:center;
+      margin:50px 0 25px;
+      color:#1e3c72;
+      font-size:35px;
+      font-weight:700;
+    }
+
+    .products{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+      padding:20px 40px;
+    }
+
+    .product-card{
+      background:white;
+      border-radius:15px;
+      overflow:hidden;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .product-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .product-card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .product-info{
+      padding:20px;
+      text-align:center;
+    }
+
+    .product-info h3{
+      margin-bottom:10px;
+      font-size:20px;
+    }
+
+    .price{
+      color:orange;
+      font-size:24px;
+      margin-bottom:15px;
+      font-weight:bold;
+    }
+
+    /* ================= BUTTON ================= */
+
+    .btn-detail,
+    .btn-cart,
+    .btn-buy{
+      width:100%;
+      padding:12px;
+      margin-top:10px;
+
+      border:none;
+      border-radius:8px;
+
+      cursor:pointer;
+      font-weight:600;
+
+      transition:0.3s;
+    }
+
+    .btn-detail{
+      background:#3498db;
+      color:white;
+    }
+
+    .btn-detail:hover{
+      background:#2980b9;
+    }
+
+    .btn-cart{
+      background:orange;
+      color:white;
+    }
+
+    .btn-cart:hover{
+      background:#d68910;
+    }
+
+    .btn-buy{
+      background:#1e3c72;
+      color:white;
+    }
+
+    .btn-buy:hover{
+      background:#16325c;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about{
+      background:white;
+      margin:40px;
+      padding:40px;
+
+      border-radius:15px;
+
+      line-height:1.9;
+
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .about h2{
+      margin-bottom:20px;
+      color:#1e3c72;
+      font-size:32px;
+    }
+
+    .about p{
+      margin-bottom:20px;
+      color:#444;
+    }
+
+    /* ================= SIDEBAR ================= */
+
+    .cart-sidebar{
+      position:fixed;
+      top:0;
+      right:-400px;
+
+      width:380px;
+      height:100vh;
+
+      background:#f5f5f5;
+
+      box-shadow:-5px 0 10px rgba(0,0,0,0.2);
+
+      padding:20px;
+
+      overflow-y:auto;
+
+      z-index:999;
+
+      transition:0.4s;
+    }
+
+    .cart-sidebar.active{
+      right:0;
+    }
+
+    /* ================= OVERLAY ================= */
+
+    .overlay{
+      position:fixed;
+      top:0;
+      left:0;
+
+      width:100%;
+      height:100%;
+
+      background:rgba(0,0,0,0.5);
+
+      z-index:998;
+
+      opacity:0;
+      visibility:hidden;
+
+      transition:0.3s;
+    }
+
+    .overlay.active{
+      opacity:1;
+      visibility:visible;
+    }
+
+    .cart-sidebar h2{
+      text-align:center;
+      margin-bottom:25px;
+      color:#1e3c72;
+    }
+
+    .cart-item{
+      border-bottom:1px solid #ccc;
+      padding:15px 0;
+    }
+
+    .cart-item h4{
+      margin-bottom:8px;
+    }
+
+    .cart-total{
+      text-align:center;
+      font-size:28px;
+      font-weight:bold;
+      margin:30px 0;
+    }
+
+    .customer-form{
+      margin-top:20px;
+    }
+
+    .customer-form h3{
+      text-align:center;
+      margin-bottom:20px;
+    }
+
+    .customer-form input{
+      width:100%;
+      padding:12px;
+      margin-bottom:15px;
+
+      border:none;
+
+      background:#ddd;
+
+      border-radius:8px;
+    }
+
+    .checkout-btn{
+      width:100%;
+      padding:15px;
+
+      border:none;
+
+      background:#1e3c72;
+      color:white;
+
+      font-size:18px;
+
+      border-radius:30px;
+
+      cursor:pointer;
+
+      transition:0.3s;
+    }
+
+    .checkout-btn:hover{
+      background:orange;
+    }
+
+    /* ================= PREMIUM FOOTER ================= */
+
+.premium-footer{
+
+  background:#070707;
+
+  color:white;
+
+  padding:70px 50px 20px;
+
+  margin-top:80px;
+
+  border-top:
+  1px solid rgba(255,255,255,0.1);
+
+}
+
+/* ================= TOP ================= */
+
+.footer-top{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(250px,1fr));
+
+  gap:50px;
+
+}
+
+/* ================= BRAND ================= */
+
+.footer-brand h2{
+
+  font-size:32px;
+
+  color:#f5c76b;
+
+  margin-bottom:20px;
+
+  letter-spacing:2px;
+
+}
+
+.footer-brand p{
+
+  color:#bbb;
+
+  line-height:1.9;
+
+  margin-bottom:25px;
+
+}
+
+/* ================= PAYMENT ================= */
+
+.payment-methods{
+
+  display:flex;
+
+  gap:15px;
+
+  align-items:center;
+
+}
+
+.payment-methods img{
+
+  width:65px;
+
+  background:white;
+
+  padding:6px;
+
+  border-radius:8px;
+
+}
+
+/* ================= LINKS ================= */
+
+.footer-links h3,
+.footer-newsletter h3{
+
+  margin-bottom:20px;
+
+  color:#f5c76b;
+
+}
+
+.footer-links a{
+
+  display:block;
+
+  color:#bbb;
+
+  text-decoration:none;
+
+  margin-bottom:12px;
+
+  transition:0.3s;
+
+}
+
+.footer-links a:hover{
+
+  color:#f5c76b;
+
+  transform:translateX(5px);
+
+}
+
+/* ================= NEWSLETTER ================= */
+
+.footer-newsletter p{
+
+  color:#bbb;
+
+  margin-bottom:20px;
+
+  line-height:1.8;
+
+}
+
+.newsletter-box{
+
+  display:flex;
+
+  margin-bottom:25px;
+
+}
+
+.newsletter-box input{
+
+  flex:1;
+
+  padding:14px;
+
+  border:none;
+
+  outline:none;
+
+  border-radius:8px 0 0 8px;
+
+  background:#1a1a1a;
+
+  color:white;
+
+}
+
+.newsletter-box button{
+
+  padding:14px 20px;
+
+  border:none;
+
+  background:#f5c76b;
+
+  color:black;
+
+  font-weight:bold;
+
+  border-radius:0 8px 8px 0;
+
+  cursor:pointer;
+
+  transition:0.3s;
+
+}
+
+.newsletter-box button:hover{
+
+  background:orange;
+
+}
+
+/* ================= SOCIAL ================= */
+
+.social-icons{
+
+  display:flex;
+
+  gap:15px;
+
+}
+
+.social-icons a{
+
+  width:45px;
+  height:45px;
+
+  background:#111;
+
+  border:
+  1px solid rgba(255,255,255,0.1);
+
+  border-radius:50%;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  color:white;
+
+  transition:0.3s;
+
+}
+
+.social-icons a:hover{
+
+  background:#f5c76b;
+
+  color:black;
+
+  transform:translateY(-5px);
+
+}
+
+/* ================= FOOTER BOTTOM ================= */
+
+.footer-bottom{
+
+  margin-top:60px;
+
+  padding-top:20px;
+
+  border-top:
+  1px solid rgba(255,255,255,0.08);
+
+  text-align:center;
+
+}
+
+.footer-bottom p{
+
+  color:#888;
+
+  letter-spacing:1px;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+  .premium-footer{
+
+    padding:50px 25px 20px;
+
+  }
+
+}
+
+  </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+  <div class="nav-left">
+
+    <a href="#">Home</a>
+    <a href="#produk">Produk</a>
+    <a href="#tentang">Tentang</a>
+    <a href="#kontak">Kontak</a>
+
+  </div>
+
+  <div class="nav-right">
+
+    <!-- PROFILE -->
+
+    <div class="profile">
+
+      <img src="profil.jpg" alt="Profile">
+
+      <span>Gentayangan</span>
+
+    </div>
+
+    <!-- SEARCH BOX-->
+
+  <div class="search-box">
+
+    <input
+    type="text"
+    id="searchInput"
+    placeholder="Cari produk"
+    onkeyup="searchProduct()">
+
+  </div>
+
+    <!-- SEARCH -->
+
+    <button class="icon-btn">
+      <i data-feather="search"></i>
+    </button>
+
+    <!-- CART -->
+
+    <button class="icon-btn cart-icon"
+    onclick="toggleCart()">
+
+      <i data-feather="shopping-cart"></i>
+
+      <span id="cartCount">0</span>
+
+    </button>
+
+  </div>
+
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+  <div class="hero-text">
+
+    <h2>Belanja Produk Viral</h2>
+
+    <p>Temukan produk terbaik dengan harga terjangkau</p>
+
+  </div>
+
+</section>
+
+<!-- ================= PRODUK ================= -->
+
+<h2 class="section-title" id="produk">
+  Produk Trending
+</h2>
+
+<section class="products">
+
+  <!-- PRODUK 1 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?q=80&w=800">
+    <div class="product-info">
+      <h3>Headset Bluetooth</h3>
+      <div class="price">Rp150.000</div>
+
+      <button class="btn-detail"
+      onclick="showDescription(
+      'Headset Bluetooth',
+      'Headset modern dengan suara bass jernih dan baterai tahan lama.'
+      )">
+      Tentang Produk
+      </button>
+
+      <button class="btn-cart"
+      onclick="addToCart('Headset Bluetooth',150.000)">
+      Masukkan Keranjang
+      </button>
+
+      <button class="btn-buy"
+      onclick="buyNow('Headset Bluetooth')">
+      Beli Sekarang
+      </button>
+    </div>
+  </div>
+
+  <!-- PRODUK 2 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?q=80&w=800">
+    <div class="product-info">
+      <h3>Smartwatch Premium</h3>
+      <div class="price">Rp250.000</div>
+
+      <button class="btn-detail"
+      onclick="showDescription(
+      'Smartwatch Premium',
+      'Smartwatch dengan fitur kesehatan dan notifikasi pintar.'
+      )">
+      Tentang Produk
+      </button>
+
+      <button class="btn-cart"
+      onclick="addToCart('Smartwatch Premium',250.000)">
+      Masukkan Keranjang
+      </button>
+
+      <button class="btn-buy"
+      onclick="buyNow('Smartwatch Premium')">
+      Beli Sekarang
+      </button>
+    </div>
+  </div>
+
+  <!-- PRODUK 3 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800">
+    <div class="product-info">
+      <h3>Jam Tangan Elegan</h3>
+      <div class="price">Rp180.000</div>
+
+      <button class="btn-detail"
+      onclick="showDescription(
+      'Jam Tangan Elegan',
+      'Jam tangan stylish dengan desain premium.'
+      )">
+      Tentang Produk
+      </button>
+
+      <button class="btn-cart"
+      onclick="addToCart('Jam Tangan Elegan',180.000)">
+      Masukkan Keranjang
+      </button>
+
+      <button class="btn-buy"
+      onclick="buyNow('Jam Tangan Elegan')">
+      Beli Sekarang
+      </button>
+    </div>
+  </div>
+
+  <!-- PRODUK 4 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=800">
+    <div class="product-info">
+      <h3>Smartphone Android</h3>
+      <div class="price">Rp2.500.000</div>
+
+      <button class="btn-detail"
+      onclick="showDescription(
+      'Smartphone Android',
+      'Smartphone cepat dengan kamera HD dan performa tinggi.'
+      )">
+      Tentang Produk
+      </button>
+
+      <button class="btn-cart"
+      onclick="addToCart('Smartphone Android',2.500.000)">
+      Masukkan Keranjang
+      </button>
+
+      <button class="btn-buy"
+      onclick="buyNow('Smartphone Android')">
+      Beli Sekarang
+      </button>
+    </div>
+  </div>
+
+  <!-- PRODUK 5 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=800">
+    <div class="product-info">
+      <h3>Headphone Gaming</h3>
+      <div class="price">Rp320.000</div>
+
+      <button class="btn-detail"
+      onclick="showDescription(
+      'Headphone Gaming',
+      'Headphone gaming RGB dengan microphone jernih.'
+      )">
+      Tentang Produk
+      </button>
+
+      <button class="btn-cart"
+      onclick="addToCart('Headphone Gaming',320.000)">
+      Masukkan Keranjang
+      </button>
+
+      <button class="btn-buy"
+      onclick="buyNow('Headphone Gaming')">
+      Beli Sekarang
+      </button>
+    </div>
+  </div>
+
+  <!-- PRODUK 6 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=800">
+    <div class="product-info">
+      <h3>Kaos Oversize</h3>
+      <div class="price">Rp120.000</div>
+
+      <button class="btn-detail"
+      onclick="showDescription(
+      'Kaos Oversize',
+      'Kaos fashion kekinian dengan bahan premium.'
+      )">
+      Tentang Produk
+      </button>
+
+      <button class="btn-cart"
+      onclick="addToCart('Kaos Oversize',120.000)">
+      Masukkan Keranjang
+      </button>
+
+      <button class="btn-buy"
+      onclick="buyNow('Kaos Oversize')">
+      Beli Sekarang
+      </button>
+    </div>
+  </div>
+
+  <!-- PRODUK 7 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=800">
+    <div class="product-info">
+      <h3>Jaket Hoodie</h3>
+      <div class="price">Rp220.000</div>
+
+      <button class="btn-detail"
+      onclick="showDescription(
+      'Jaket Hoodie',
+      'Hoodie hangat dan nyaman dengan desain modern.'
+      )">
+      Tentang Produk
+      </button>
+
+      <button class="btn-cart"
+      onclick="addToCart('Jaket Hoodie',220.000)">
+      Masukkan Keranjang
+      </button>
+
+      <button class="btn-buy"
+      onclick="buyNow('Jaket Hoodie')">
+      Beli Sekarang
+      </button>
+    </div>
+  </div>
+
+  <!-- PRODUK 8 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800">
+    <div class="product-info">
+      <h3>Sepatu Sneakers</h3>
+      <div class="price">Rp450.000</div>
+
+      <button class="btn-detail"
+      onclick="showDescription(
+      'Sepatu Sneakers',
+      'Sneakers stylish untuk pria dan wanita.'
+      )">
+      Tentang Produk
+      </button>
+
+      <button class="btn-cart"
+      onclick="addToCart('Sepatu Sneakers',450.000)">
+      Masukkan Keranjang
+      </button>
+
+      <button class="btn-buy"
+      onclick="buyNow('Sepatu Sneakers')">
+      Beli Sekarang
+      </button>
+    </div>
+  </div>
+
+  <!-- PRODUK 9 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=800">
+    <div class="product-info">
+      <h3>Tas Fashion</h3>
+      <div class="price">Rp300.000</div>
+
+      <button class="btn-detail"
+      onclick="showDescription(
+      'Tas Fashion',
+      'Tas elegan dengan desain premium.'
+      )">
+      Tentang Produk
+      </button>
+
+      <button class="btn-cart"
+      onclick="addToCart('Tas Fashion',300.000)">
+      Masukkan Keranjang
+      </button>
+
+      <button class="btn-buy"
+      onclick="buyNow('Tas Fashion')">
+      Beli Sekarang
+      </button>
+    </div>
+  </div>
+
+  <!-- PRODUK 10 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=800">
+    <div class="product-info">
+      <h3>Kacamata Stylish</h3>
+      <div class="price">Rp140.000</div>
+
+      <button class="btn-detail"
+      onclick="showDescription(
+      'Kacamata Stylish',
+      'Kacamata trendy untuk tampilan fashionable.'
+      )">
+      Tentang Produk
+      </button>
+
+      <button class="btn-cart"
+      onclick="addToCart('Kacamata Stylish',140.000)">
+      Masukkan Keranjang
+      </button>
+
+      <button class="btn-buy"
+      onclick="buyNow('Kacamata Stylish')">
+      Beli Sekarang
+      </button>
+    </div>
+  </div>
+
+  <!-- PRODUK 11 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?q=80&w=800">
+    <div class="product-info">
+      <h3>Skincare Glow</h3>
+      <div class="price">Rp175.000</div>
+
+      <button class="btn-detail"
+      onclick="showDescription(
+      'Skincare Glow',
+      'Perawatan kulit agar tampak sehat dan glowing.'
+      )">
+      Tentang Produk
+      </button>
+
+      <button class="btn-cart"
+      onclick="addToCart('Skincare Glow',175.000)">
+      Masukkan Keranjang
+      </button>
+
+      <button class="btn-buy"
+      onclick="buyNow('Skincare Glow')">
+      Beli Sekarang
+      </button>
+    </div>
+  </div>
+
+  <!-- PRODUK 12 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?q=80&w=800">
+    <div class="product-info">
+      <h3>Kamera Digital</h3>
+      <div class="price">Rp3.200.000</div>
+
+      <button class="btn-detail"
+      onclick="showDescription(
+      'Kamera Digital',
+      'Kamera berkualitas tinggi untuk fotografi profesional.'
+      )">
+      Tentang Produk
+      </button>
+
+      <button class="btn-cart"
+      onclick="addToCart('Kamera Digital',3.200.000)">
+      Masukkan Keranjang
+      </button>
+
+      <button class="btn-buy"
+      onclick="buyNow('Kamera Digital')">
+      Beli Sekarang
+      </button>
+    </div>
+  </div>
+
+  <!-- PRODUK 13 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8?q=80&w=800">
+    <div class="product-info">
+      <h3>Laptop Gaming</h3>
+      <div class="price">Rp8.500.000</div>
+
+      <button class="btn-detail"
+      onclick="showDescription(
+      'Laptop Gaming',
+      'Laptop performa tinggi untuk gaming dan editing.'
+      )">
+      Tentang Produk
+      </button>
+
+      <button class="btn-cart"
+      onclick="addToCart('Laptop Gaming',8.500.000)">
+      Masukkan Keranjang
+      </button>
+
+      <button class="btn-buy"
+      onclick="buyNow('Laptop Gaming')">
+      Beli Sekarang
+      </button>
+    </div>
+  </div>
+
+  <!-- PRODUK 14 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=800">
+    <div class="product-info">
+      <h3>Topi Fashion</h3>
+      <div class="price">Rp95.000</div>
+
+      <button class="btn-detail"
+      onclick="showDescription(
+      'Topi Fashion',
+      'Topi keren untuk melengkapi gaya outfit.'
+      )">
+      Tentang Produk
+      </button>
+
+      <button class="btn-cart"
+      onclick="addToCart('Topi Fashion',95.000)">
+      Masukkan Keranjang
+      </button>
+
+      <button class="btn-buy"
+      onclick="buyNow('Topi Fashion')">
+      Beli Sekarang
+      </button>
+    </div>
+  </div>
+
+  <!-- PRODUK 15 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=800">
+    <div class="product-info">
+      <h3>Dress Wanita</h3>
+      <div class="price">Rp275.000</div>
+
+      <button class="btn-detail"
+      onclick="showDescription(
+      'Dress Wanita',
+      'Dress cantik dengan desain elegan dan modern.'
+      )">
+      Tentang Produk
+      </button>
+
+      <button class="btn-cart"
+      onclick="addToCart('Dress Wanita',275.000)">
+      Masukkan Keranjang
+      </button>
+
+      <button class="btn-buy"
+      onclick="buyNow('Dress Wanita')">
+      Beli Sekarang
+      </button>
+    </div>
+  </div>
+
+  <!-- PRODUK 16 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=800">
+    <div class="product-info">
+      <h3>Sepatu Sport</h3>
+      <div class="price">Rp350.000</div>
+
+      <button class="btn-detail"
+      onclick="showDescription(
+      'Sepatu Sport',
+      'Sepatu olahraga ringan dan nyaman dipakai.'
+      )">
+      Tentang Produk
+      </button>
+
+      <button class="btn-cart"
+      onclick="addToCart('Sepatu Sport',350.000)">
+      Masukkan Keranjang
+      </button>
+
+      <button class="btn-buy"
+      onclick="buyNow('Sepatu Sport')">
+      Beli Sekarang
+      </button>
+    </div>
+  </div>
+
+  <!-- PRODUK 17 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800">
+    <div class="product-info">
+      <h3>Jam Digital</h3>
+      <div class="price">Rp210.000</div>
+
+      <button class="btn-detail"
+      onclick="showDescription(
+      'Jam Digital',
+      'Jam digital modern dengan fitur lengkap.'
+      )">
+      Tentang Produk
+      </button>
+
+      <button class="btn-cart"
+      onclick="addToCart('Jam Digital',210.000)">
+      Masukkan Keranjang
+      </button>
+
+      <button class="btn-buy"
+      onclick="buyNow('Jam Digital')">
+      Beli Sekarang
+      </button>
+    </div>
+  </div>
+
+  <!-- PRODUK 18 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?q=80&w=800">
+    <div class="product-info">
+      <h3>Tablet Android</h3>
+      <div class="price">Rp2.700.000</div>
+
+      <button class="btn-detail"
+      onclick="showDescription(
+      'Tablet Android',
+      'Tablet multifungsi untuk belajar dan hiburan.'
+      )">
+      Tentang Produk
+      </button>
+
+      <button class="btn-cart"
+      onclick="addToCart('Tablet Android',2.700.000)">
+      Masukkan Keranjang
+      </button>
+
+      <button class="btn-buy"
+      onclick="buyNow('Tablet Android')">
+      Beli Sekarang
+      </button>
+    </div>
+  </div>
+
+  <!-- PRODUK 19 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800">
+    <div class="product-info">
+      <h3>Sepatu Casual</h3>
+      <div class="price">Rp280.000</div>
+
+      <button class="btn-detail"
+      onclick="showDescription(
+      'Sepatu Casual',
+      'Sepatu casual nyaman untuk aktivitas sehari-hari.'
+      )">
+      Tentang Produk
+      </button>
+
+      <button class="btn-cart"
+      onclick="addToCart('Sepatu Casual',280.000)">
+      Masukkan Keranjang
+      </button>
+
+      <button class="btn-buy"
+      onclick="buyNow('Sepatu Casual')">
+      Beli Sekarang
+      </button>
+    </div>
+  </div>
+
+  <!-- PRODUK 20 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=800">
+    <div class="product-info">
+      <h3>Jaket Denim</h3>
+      <div class="price">Rp390.000</div>
+
+      <button class="btn-detail"
+      onclick="showDescription(
+      'Jaket Denim',
+      'Jaket denim premium dengan desain fashionable.'
+      )">
+      Tentang Produk
+      </button>
+
+      <button class="btn-cart"
+      onclick="addToCart('Jaket Denim',390.000)">
+      Masukkan Keranjang
+      </button>
+
+      <button class="btn-buy"
+      onclick="buyNow('Jaket Denim')">
+      Beli Sekarang
+      </button>
+    </div>
+  </div>
+
+</section>
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="tentang">
+
+<h2>Tentang Ainvoria</h2>
+
+<p>
+Ainvoria adalah platform e-commerce modern yang hadir untuk memenuhi kebutuhan masyarakat Indonesia dalam berbelanja online secara aman, cepat, dan terpercaya. Kami menyediakan berbagai produk pilihan mulai dari fashion, elektronik, aksesoris, skincare, gadget, hingga perlengkapan gaya hidup yang sedang viral dan trending di kalangan masyarakat. Dengan konsep marketplace modern, Ainvoria hadir untuk memberikan pengalaman belanja online yang lebih nyaman, praktis, dan berkualitas bagi seluruh konsumen di Indonesia.
+</p>
+
+<p>
+Ainvoria dibangun dengan tujuan untuk membantu masyarakat mendapatkan produk terbaik dengan harga yang terjangkau tanpa harus keluar rumah. Kami memahami bahwa perkembangan teknologi digital membuat gaya hidup masyarakat menjadi lebih praktis dan modern. Oleh karena itu, Ainvoria memanfaatkan sistem e-commerce berbasis website yang responsif dan mudah digunakan di berbagai perangkat seperti smartphone, tablet, maupun komputer. Dengan tampilan modern dan fitur yang lengkap, pengguna dapat mencari produk, melihat detail barang, memasukkan produk ke keranjang, hingga melakukan checkout dengan mudah.
+</p>
+
+<p>
+Selain menyediakan berbagai produk trending, Ainvoria juga fokus terhadap kualitas pelayanan dan kepuasan pelanggan. Setiap produk yang tersedia telah dipilih dengan mempertimbangkan kualitas, desain, dan kebutuhan pasar saat ini. Kami selalu mengikuti perkembangan tren terbaru agar pelanggan dapat menemukan produk viral dan populer dengan mudah. Mulai dari fashion oversize, smartwatch, headset bluetooth, skincare glowing, hingga gadget modern tersedia di platform Ainvoria.
+</p>
+
+<p>
+Dalam menjalankan bisnis, Ainvoria menggunakan model B2C (Business to Consumer), yaitu perusahaan menjual langsung kepada konsumen melalui platform digital. Selain itu, ke depannya Ainvoria juga memiliki rencana pengembangan menuju sistem C2C (Consumer to Consumer) agar pengguna dapat menjual produk mereka sendiri di dalam platform. Dengan adanya fitur tersebut, Ainvoria dapat menjadi marketplace yang lebih luas dan bermanfaat bagi masyarakat.
+</p>
+
+<p>
+Strategi pemasaran Ainvoria memanfaatkan media sosial seperti Instagram, TikTok, Facebook, dan platform digital lainnya. Kami menggunakan berbagai keyword trending seperti “produk viral TikTok”, “fashion kekinian”, “barang aesthetic”, dan “gadget modern” untuk meningkatkan engagement serta menarik lebih banyak pengunjung website. Dengan perkembangan dunia digital yang semakin pesat, Ainvoria optimis dapat terus berkembang menjadi salah satu platform e-commerce terbaik di Indonesia.
+</p>
+
+</section>
+
+<!-- ================= OVERLAY ================= -->
+
+<div class="overlay" id="overlay"
+onclick="closeCart()"></div>
+
+<!-- ================= SIDEBAR ================= -->
+
+<div class="cart-sidebar" id="cartSidebar">
+
+  <h2>Keranjang Belanja</h2>
+
+  <div id="cartItems"></div>
+
+  <div class="cart-total">
+
+    Total :
+    <span id="totalPrice">0 Item</span>
+
+  </div>
+
+  <hr>
+
+  <div class="customer-form">
+
+    <h3>Customer Detail</h3>
+
+    <input type="text" placeholder="Nama">
+
+    <input type="email" placeholder="Email">
+
+    <input type="text" placeholder="Nomor HP">
+
+    <button class="checkout-btn"
+    onclick="checkout()">
+    Checkout
+    </button>
+
+  </div>
+
+</div>
+
+<!-- ================= PREMIUM FOOTER ================= -->
+
+<footer class="premium-footer" id="kontak">
+
+  <div class="footer-top">
+
+    <!-- BRAND -->
+
+    <div class="footer-brand">
+
+      <h2>AINVORIA</h2>
+
+      <p>
+        Luxury marketplace modern dengan koleksi
+        fashion, gadget, lifestyle, dan produk
+        premium terbaik untuk kebutuhan Anda.
+      </p>
+
+      <div class="payment-methods">
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_dana_blue.svg">
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Gopay_logo.svg">
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Logo_OVO_purple.svg">
+
+      </div>
+
+    </div>
+
+    <!-- MENU -->
+
+    <div class="footer-links">
+
+      <h3>Marketplace</h3>
+
+      <a href="#">Home</a>
+      <a href="#produk">Produk</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#">Promo</a>
+      <a href="#">Best Seller</a>
+
+    </div>
+
+    <!-- CUSTOMER -->
+
+    <div class="footer-links">
+
+      <h3>Customer Service</h3>
+
+      <a href="#">Bantuan</a>
+      <a href="#">Cara Belanja</a>
+      <a href="#">Pengiriman</a>
+      <a href="#">Pengembalian</a>
+      <a href="#">FAQ</a>
+
+    </div>
+
+    <!-- NEWSLETTER -->
+
+    <div class="footer-newsletter">
+
+      <h3>Newsletter</h3>
+
+      <p>
+        Dapatkan promo dan produk terbaru dari Ainvoria.
+      </p>
+
+      <div class="newsletter-box">
+
+        <input
+        type="email"
+        placeholder="Masukkan email">
+
+        <button>
+          Subscribe
+        </button>
+
+      </div>
+
+      <!-- SOCIAL -->
+
+      <div class="social-icons">
+
+        <a href="#">
+          <i data-feather="instagram"></i>
+        </a>
+
+        <a href="#">
+          <i data-feather="facebook"></i>
+        </a>
+
+        <a href="#">
+          <i data-feather="twitter"></i>
+        </a>
+
+        <a href="#">
+          <i data-feather="youtube"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER BOTTOM -->
+
+  <div class="footer-bottom">
+
+    <p>
+      © 2026 AINVORIA — Elegance In Every Choice
+    </p>
+
+  </div>
+
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+feather.replace();
+
+/* ================= DATA ================= */
+
+let cart = [];
+let total = 0;
+
+/* ================= DESKRIPSI PRODUK ================= */
+
+function showDescription(name, description){
+
+  alert(
+    "Produk : " + name +
+    "\n\nDeskripsi : " + description
+  );
+
+}
+
+/* ================= BELI SEKARANG ================= */
+
+function buyNow(productName){
+
+  alert(
+    "Anda membeli : " + productName
+  );
+
+}
+
+/* ================= TAMBAH KERANJANG ================= */
+
+function addToCart(productName, price){
+
+  cart.push({
+    name:productName,
+    price:price
+  });
+
+  total += price;
+
+  document.getElementById("cartCount")
+  .innerHTML = cart.length;
+
+  renderCart();
+
+  alert(productName + " berhasil ditambahkan");
+
+}
+
+/* ================= RENDER CART ================= */
+
+function renderCart(){
+
+  const cartItems =
+  document.getElementById("cartItems");
+
+  cartItems.innerHTML = "";
+
+  cart.forEach((item,index)=>{
+
+    cartItems.innerHTML += `
+
+      <div class="cart-item">
+
+        <h4>${item.name}</h4>
+
+        <p>
+          Rp ${item.price.toLocaleString("id-ID")}
+        </p>
+
+        <button onclick="removeCart(${index})"
+        class="btn-detail">
+          Hapus
+        </button>
+
+      </div>
+
+    `;
+
+  });
+
+  document.getElementById("totalPrice")
+  .innerHTML =
+  "Rp " + total.toLocaleString("id-ID");
+
+}
+
+/* ================= HAPUS ITEM ================= */
+
+function removeCart(index){
+
+  total -= cart[index].price;
+
+  cart.splice(index,1);
+
+  document.getElementById("cartCount")
+  .innerHTML = cart.length;
+
+  renderCart();
+
+}
+
+/* ================= SEARCH PRODUK ================= */
+
+function searchProduct(){
+
+  let input =
+  document.getElementById("searchInput")
+  .value.toLowerCase();
+
+  let products =
+  document.querySelectorAll(".product-card");
+
+  products.forEach((product)=>{
+
+    let title =
+    product.querySelector("h3")
+    .innerText.toLowerCase();
+
+    if(title.includes(input)){
+
+      product.style.display = "block";
+
+    }else{
+
+      product.style.display = "none";
+
+    }
+
+  });
+
+}
+
+/* ================= TOGGLE CART ================= */
+
+function toggleCart(){
+
+  document
+  .getElementById("cartSidebar")
+  .classList.toggle("active");
+
+  document
+  .getElementById("overlay")
+  .classList.toggle("active");
+
+}
+
+/* ================= CLOSE CART ================= */
+
+function closeCart(){
+
+  document
+  .getElementById("cartSidebar")
+  .classList.remove("active");
+
+  document
+  .getElementById("overlay")
+  .classList.remove("active");
+
+}
+
+/* ================= CHECKOUT ================= */
+
+function checkout(){
+
+  if(cart.length == 0){
+
+    alert("Keranjang masih kosong");
+
+  }else{
+
+    alert(
+      "Checkout berhasil!\n\nTotal Belanja : Rp "
+      + total.toLocaleString("id-ID")
+    );
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
