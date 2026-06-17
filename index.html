@@ -27,36 +27,61 @@
       background:#f4f4f4;
       padding-top:80px;
     }
+    
+    /* ================= SELLER ================= */
+
+    #seller{
+      max-width:500px;
+      margin:50px auto;
+      padding:30px;
+      background:white;
+      border-radius:15px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    #seller h2{
+      text-align:center;
+      color:#1e3c72;
+      margin-bottom:20px;
+    }
 
     #seller input{
       width:100%;
       padding:12px;
       margin-bottom:15px;
-      border:none;
-      background:#eee;
+      border:1px solid #ddd;
       border-radius:8px;
     }
 
-    .rating{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:3px;
-      margin-bottom:10px;
+    #seller button{
+      width:100%;
+      padding:12px;
+      background:#1e3c72;
+      color:white;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
     }
 
-    .rating i{
-      color:#FFD700;
-      font-size:14px;
+    #seller button{
+      width:100%;
+      padding:12px;
+      background:#1e3c72;
+      color:white;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      transition:0.3s;
     }
 
-    .rating span{
-      margin-left:5px;
-      font-size:14px;
-      color:#666;
-      font-weight:600;
+    #seller button:hover{
+      background:orange;
     }
-     
+
+    #seller button:active{
+      background:#d68910;
+      transform:scale(0.98);
+    }
 
     /* ================= NAVBAR ================= */
 
@@ -145,11 +170,13 @@
     .search-box input{
       width:100%;
       padding:10px;
+      background:none;
       border:none;
       border-color: black;
       border-radius:20px;
       font-size:16px;
-      outline:none;
+      color:white;
+      outline:white;
       box-shadow:0 2px 10px rgba(0,0,0,0.1);
     }
 
@@ -226,21 +253,22 @@
 
     /* ================= HERO ================= */
 
-    .hero{
-      height:800px;
+   .hero{
+        min-height:70vh;
+        background:#fcfcfc;
+        background-size:cover;
+        background-position:center; 
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding:20px;
+    }
 
-      background:url('ainvoria.jpg');
-
-      background-size:cover;
-      background-position:center;
-      background-repeat:no-repeat;
-
-      display:flex;
-      justify-content:center;
-      align-items:center;
-
-      color:white;
-      text-align:center;
+   .hero-logo{
+        width:100%;
+        max-width:450px;
+        height:auto;
+        object-fit:contain;
     }
 
     /* ================= PROMO BANNER ================= */
@@ -427,11 +455,11 @@
 
     .cart-sidebar{
       position:fixed;
-      top:0;
+      top:65px;
       right:-400px;
 
       width:380px;
-      height:100vh;
+      height:calc(100vh - 65px);
 
       background:#f5f5f5;
 
@@ -441,7 +469,7 @@
 
       overflow-y:auto;
 
-      z-index:999;
+      z-index:1500;
 
       transition:0.4s;
     }
@@ -449,6 +477,8 @@
     .cart-sidebar.active{
       right:0;
     }
+
+
 
     /* ================= OVERLAY ================= */
 
@@ -651,7 +681,7 @@
 
 }
 
-/* ================= NEWSLETTER ================= */
+/* ================= NEWS LETTER ================= */
 
 .footer-newsletter p{
 
@@ -792,6 +822,8 @@
 
 }
 
+
+
   </style>
 </head>
 
@@ -850,6 +882,7 @@
 <!-- ================= HERO ================= -->
 
 <section class="hero">
+    <img src="ainvoria.jpg" class="hero-logo">
 </section>
 
 <!-- ================= PROMO BANNER ================= -->
@@ -905,7 +938,7 @@
   Produk Trending
 </h2>
 
-<section class="products">
+<section class="products" id="productContainer">
 
   <!-- PRODUK 1 -->
   <div class="product-card">
@@ -933,7 +966,7 @@
       </button>
 
       <button class="btn-cart"
-      onclick="addToCart('Headset Bluetooth',150.000)">
+      onclick="addToCart('Headset Bluetooth',150000)">
       Masukkan Keranjang
       </button>
 
@@ -971,7 +1004,7 @@
       </button>
 
       <button class="btn-cart"
-      onclick="addToCart('Smartwatch Premium',250.000)">
+      onclick="addToCart('Smartwatch Premium',250000)">
       Masukkan Keranjang
       </button>
 
@@ -998,7 +1031,7 @@
       </button>
 
       <button class="btn-cart"
-      onclick="addToCart('Jam Tangan Elegan',180.000)">
+      onclick="addToCart('Jam Tangan Elegan',180000)">
       Masukkan Keranjang
       </button>
 
@@ -1025,7 +1058,7 @@
       </button>
 
       <button class="btn-cart"
-      onclick="addToCart('Smartphone Android',2.500.000)">
+      onclick="addToCart('Smartphone Android',2500000)">
       Masukkan Keranjang
       </button>
 
@@ -1052,7 +1085,7 @@
       </button>
 
       <button class="btn-cart"
-      onclick="addToCart('Headphone Gaming',320.000)">
+      onclick="addToCart('Headphone Gaming',320000)">
       Masukkan Keranjang
       </button>
 
@@ -1079,7 +1112,7 @@
       </button>
 
       <button class="btn-cart"
-      onclick="addToCart('Kaos Oversize',120.000)">
+      onclick="addToCart('Kaos Oversize',120000)">
       Masukkan Keranjang
       </button>
 
@@ -1106,7 +1139,7 @@
       </button>
 
       <button class="btn-cart"
-      onclick="addToCart('Jaket Hoodie',220.000)">
+      onclick="addToCart('Jaket Hoodie',220000)">
       Masukkan Keranjang
       </button>
 
@@ -1142,7 +1175,7 @@
       </button>
 
       <button class="btn-cart"
-      onclick="addToCart('Sepatu Sneakers',450.000)">
+      onclick="addToCart('Sepatu Sneakers',450000)">
       Masukkan Keranjang
       </button>
 
@@ -1169,7 +1202,7 @@
       </button>
 
       <button class="btn-cart"
-      onclick="addToCart('Tas Fashion',300.000)">
+      onclick="addToCart('Tas Fashion',300000)">
       Masukkan Keranjang
       </button>
 
@@ -1196,7 +1229,7 @@
       </button>
 
       <button class="btn-cart"
-      onclick="addToCart('Kacamata Stylish',140.000)">
+      onclick="addToCart('Kacamata Stylish',140000)">
       Masukkan Keranjang
       </button>
 
@@ -1232,7 +1265,7 @@
       </button>
 
       <button class="btn-cart"
-      onclick="addToCart('Skincare Glow',175.000)">
+      onclick="addToCart('Skincare Glow',175000)">
       Masukkan Keranjang
       </button>
 
@@ -1259,7 +1292,7 @@
       </button>
 
       <button class="btn-cart"
-      onclick="addToCart('Kamera Digital',3.200.000)">
+      onclick="addToCart('Kamera Digital',3200000)">
       Masukkan Keranjang
       </button>
 
@@ -1286,7 +1319,7 @@
       </button>
 
       <button class="btn-cart"
-      onclick="addToCart('Laptop Gaming',8.500.000)">
+      onclick="addToCart('Laptop Gaming',8500000)">
       Masukkan Keranjang
       </button>
 
@@ -1313,7 +1346,7 @@
       </button>
 
       <button class="btn-cart"
-      onclick="addToCart('Topi Fashion',95.000)">
+      onclick="addToCart('Topi Fashion',95000)">
       Masukkan Keranjang
       </button>
 
@@ -1340,7 +1373,7 @@
       </button>
 
       <button class="btn-cart"
-      onclick="addToCart('Dress Wanita',275.000)">
+      onclick="addToCart('Dress Wanita',275000)">
       Masukkan Keranjang
       </button>
 
@@ -1367,7 +1400,7 @@
       </button>
 
       <button class="btn-cart"
-      onclick="addToCart('Sepatu Sport',350.000)">
+      onclick="addToCart('Sepatu Sport',350000)">
       Masukkan Keranjang
       </button>
 
@@ -1394,7 +1427,7 @@
       </button>
 
       <button class="btn-cart"
-      onclick="addToCart('Jam Digital',210.000)">
+      onclick="addToCart('Jam Digital',210000)">
       Masukkan Keranjang
       </button>
 
@@ -1421,7 +1454,7 @@
       </button>
 
       <button class="btn-cart"
-      onclick="addToCart('Tablet Android',2.700.000)">
+      onclick="addToCart('Tablet Android',2700000)">
       Masukkan Keranjang
       </button>
 
@@ -1448,7 +1481,7 @@
       </button>
 
       <button class="btn-cart"
-      onclick="addToCart('Sepatu Casual',280.000)">
+      onclick="addToCart('Sepatu Casual',280000)">
       Masukkan Keranjang
       </button>
 
@@ -1475,7 +1508,7 @@
       </button>
 
       <button class="btn-cart"
-      onclick="addToCart('Jaket Denim',390.000)">
+      onclick="addToCart('Jaket Denim',390000)">
       Masukkan Keranjang
       </button>
 
@@ -1558,42 +1591,21 @@ onclick="closeCart()"></div>
 
 </div>
 
-<!-- ================= LOGIN SELLER ================= -->
-<section class="about">
-
-<h2>Login Seller</h2>
-
-<input type="text"
-placeholder="Username">
-
-<input type="password"
-placeholder="Password">
-
-<button class="checkout-btn">
-Login Seller
-</button>
-
-</section>
-
 <!-- ================= SELLER ================= -->
 
-<section class="about" id="seller">
+<section id="seller">
 
-  <h2>Dashboard Seller</h2>
+<h2>Dashboard Seller</h2>
 
-  <input type="text" id="namaProduk"
-  placeholder="Nama Produk">
+<input type="text" id="productName" placeholder="Nama Produk">
 
-  <input type="number" id="hargaProduk"
-  placeholder="Harga Produk">
+<input type="number" id="productPrice" placeholder="Harga Produk">
 
-  <input type="text" id="gambarProduk"
-  placeholder="URL Gambar Produk">
+<input type="text" id="productImage" placeholder="URL Gambar">
 
-  <button class="checkout-btn"
-  onclick="tambahProduk()">
-  Tambah Produk
-  </button>
+<button onclick="tambahProduk()">
+Tambah Produk
+</button>
 
 </section>
 
@@ -1681,11 +1693,11 @@ Login Seller
 
       <div class="social-icons">
 
-        <a href="#">
+        <a href="https://www.instagram.com/remann89?igsh=aXI0YThoMmZzd3Y0">
           <i data-feather="instagram"></i>
         </a>
 
-        <a href="#">
+        <a href="https://www.facebook.com/share/1JdKuFvKRc">
           <i data-feather="facebook"></i>
         </a>
 
@@ -1892,69 +1904,101 @@ function checkout(){
 
 /* ================= TAMBAH PRODUK ================= */
 function tambahProduk(){
+
   let nama =
-  document.getElementById("namaProduk").value;
+  document.getElementById("productName").value;
+
   let harga =
-  document.getElementById("hargaProduk").value;
+  document.getElementById("productPrice").value;
+
   let gambar =
-  document.getElementById("gambarProduk").value;
-if(
-  nama=="" ||
-  harga=="" ||
-  gambar==""
-){
-alert("Lengkapi data produk");
-return;
-}
+  document.getElementById("productImage").value;
 
-let produkBaru = `
-<div class="product-card">
+  if(
+    nama=="" ||
+    harga=="" ||
+    gambar==""
+  ){
+    alert("Lengkapi data produk");
+    return;
+  }
 
-  <img src="${gambar}">
+  let produkBaru = `
 
-  <div class="product-info">
+  <div class="product-card">
 
-  <h3>${nama}</h3>
+    <img src="${gambar}">
 
-  <div class="price">
-  Rp ${parseInt(harga).toLocaleString('id-ID')}
+    <div class="product-info">
+
+      <h3>${nama}</h3>
+
+      <div class="price">
+        Rp ${Number(harga).toLocaleString('id-ID')}
+      </div>
+
+      <button class="btn-detail"
+      onclick="showDescription(
+      '${nama}',
+      'Produk dari Seller AINVORIA'
+      )">
+      Tentang Produk
+      </button>
+
+      <button class="btn-cart"
+      onclick="addToCart('${nama}')">
+      Masukkan Keranjang
+      </button>
+
+      <button class="btn-buy"
+      onclick="buyNow('${nama}')">
+      Beli Sekarang
+      </button>
+
+    </div>
+
   </div>
 
-  <button class="btn-detail"
-  onclick="showDescription(
-  '${nama}',
-  'Produk dari Seller Ainvoria'
-  )">
-  Tentang Produk
-  </button>
+  `;
 
-  <button class="btn-cart"
-  onclick="addToCart('${nama}')">
-  Masukkan Keranjang
-  </button>
-
-  <button class="btn-buy"
-  onclick="buyNow('${nama}')">
-  Beli Sekarang
-  </button>
-
-</div>
-
-</div>
-
-`;
-
-document
+  document
 .querySelector(".products")
 .insertAdjacentHTML(
 "beforeend",
 produkBaru
 );
 
+let oldProducts =
+localStorage.getItem("sellerProducts") || "";
+
+localStorage.setItem(
+  "sellerProducts",
+  oldProducts + produkBaru
+);
+
 alert("Produk berhasil ditambahkan");
 
 }
 
+/* ================= LOAD PRODUK SELLER ================= */
+
+window.onload = function(){
+
+  let products =
+  localStorage.getItem("sellerProducts");
+
+  if(products){
+
+    document
+    .querySelector(".products")
+    .insertAdjacentHTML(
+      "beforeend",
+      products
+    );
+
+  }
+
+}
 </script>
 
 </body>
